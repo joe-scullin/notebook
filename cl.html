@@ -1,5 +1,14 @@
 <!Doctype html>
 
+<!--
+        Special Chatacters
+            
+        <       &lt;
+        >       &gt;
+        &       &amp;
+        space   &nbsp;   
+                                -->
+
 <html>
   
   
@@ -74,7 +83,148 @@
 
 
 
+<!-- Files / Directories -->    
 
+<h2> Files / Directories </h2>
+
+    <table>
+        <tr>
+            <th> print / echo </th>
+            <td> prints an argument to the command line </td>
+        </tr>
+        <tr>
+            <th> cat </th>
+            <td> print file content to the terminal </td>
+        </tr>
+        <tr>
+            <th> touch </th>
+            <td> creates an empty file of specified type </td>
+        </tr>
+        <tr>
+            <th> mkdir </th>
+            <td> creates an empty directory </td>
+        </tr>
+        <tr>
+            <th> rm </th>
+            <td> removes files
+                <ul> 
+                    removing a file using 'rm' will permanently delete it so cannot be recovered 
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <th> rmdir </th>
+            <td> removes <em> empty </em> directories 
+                <ul>
+                    if you want to remove a full directory, you'll need to use the command <br> <strong>rm -r &nbsp; Directory\ Name </strong> <br> which will remove all contents within the target directory
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <th> mv </th>
+            <td> moves ( and renames ) files and directories to specified location <br> 
+                <ul>
+                    mv can also be used to rename files or directories using the format: <br> <strong>mv &nbsp; old_file_name &nbsp; new_file_name</strong>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <th> cp </th>
+            <td> copies files or directories </td>
+        </tr>
+    </table>
+
+
+
+
+
+<!-- Data / File Storage -->
+    
+<h2> Data / Storage </h2>
+
+    <table>
+        <tr>
+            <th> <a href="https://www.geeksforgeeks.org/zip-command-in-linux-with-examples/"> zip </a> </th>
+            <td> Create a .zip file from an existing file / directory using the following format <br> zip  &nbsp; &nbsp; file_name.zip &nbsp; &nbsp;  file_name 
+        <!-- Zip Table of Functions [ start ] -->
+            <table style="font-size: 0.85em; background-color: #1e1e1e; line-height: 1.25em; border-collapse: collapse ;">
+                <tr>
+                    <th> -r </th>
+                    <td> recursively zips all files in a directory </td>
+                </tr>
+                <tr>
+                    <th> -u </th>
+                    <td> updates the zip archive to add new files <br> <strong> zip -u &nbsp; file.zip &nbsp; file2.txt file3.txt </strong> <br> this will add files 2 and 3 to the existing file.zip </td>
+                </tr>
+                <tr>
+                    <th> -d </th>
+                    <td> deletes specified files from .zip </td>
+                </tr>
+                <tr>
+                    <th> -x </th>
+                    <td> excludes specified files while zipping </td>
+                </tr>
+                <tr>
+                    <th> -m </th>
+                    <td> Deletes original files after zipping </td>
+                </tr>
+                <tr>
+                    <th> *.jpg </th>
+                    <td> zip all files within a directory of a specified format as a single file by using the following syntax: <br><strong>zip &nbsp; new_zip.zip &nbsp; *.jpg</strong><br> now all .jpg files within the directory will be saved as a single .zip file named "new_zip.zip" </td>
+                </tr>
+                <tr>
+                    <th> indiv file output </th>
+                    <td> to individually zip all specified files in a directory (as opposed to wrapping them in a single zip file) : <br> <strong>for i in &nbsp; <a href="https://unix.stackexchange.com/questions/68489/command-to-zip-multiple-directories-into-individual-zip-files">*.jpg</a>; &nbsp; do &nbsp; zip "${i%}.zip" &nbsp; "$i"; done</strong> <br> where <em>*.jpg</em> indicates the file type you want to zip individually </td>
+                </tr>
+            </table>
+        <!-- Zip Table of Functions [ end ] -->
+        </tr>
+        <tr>
+            <th> unzip </th>
+            <td> unzip will list, test, or extract files from a zip archive </td>
+        </tr>
+        <tr>
+            <th> tar </th>
+            <td> the difference between zip and tar is that zip is a file compression format while tar is a file archive format. Zip compresses data to reduce its size, while tar combines multiple files into a single archive file, but does not compress the data within it. </td>
+        </tr>
+    </table>
+
+
+
+
+
+
+<!-- Operators -->
+
+<h2> Operators </h2>    
+
+    <table>
+        <tr>
+            <th> > </th>
+            <td> used to redirect the output of a command to a file. The contents of the file are <strong><em>overwritten</em></strong> each time this operator is used. <br> <strong>print "Hello" > text.txt</strong> <br> this will overwrite the contents of file: text.txt and replace it with the string - Hello </td>
+        </tr>
+        <tr>
+            <th> >> </th>
+            <td> similar to the > operator, but it <strong><em>appends</em></strong> the output of a command to an existing file, rather than overwriting its contents. <br> <strong> print "World" >> text.txt</strong> <br> this will append the string - World - to the already existing content within the file text.txt resulting in <br> Hello <br> World </td>
+        </tr>
+        <tr>
+            <th> < </th>
+            <td> </td>
+        </tr>
+        <tr>
+            <th> | </th>
+            <td> </td>
+        </tr>
+        <tr>
+            <th> | </th>
+            <td> </td>
+        </tr>
+    </table>
+
+
+
+
+<!-- Actions -->
 
 <h2>Actions</h2>
 
@@ -92,10 +242,6 @@
             <td> prints useranme </td>
         </tr>
         <tr>
-            <th> print / echo </th>
-            <td> prints and argument to the command line </td>
-        </tr>
-        <tr>
             <th> say </th>
             <td> computer will say anything you type </td>
         </tr>
@@ -110,6 +256,7 @@
 
 
 <!-- Flags -->
+
     <h2> <a href="https://www.softcover.io/read/fc6c09de/unix_commands/basics"> Flags </a> </h2>
     <table style="font-size: 0.85em; background-color: #1e1e1e">
         <tr>
@@ -156,43 +303,55 @@
     <table style="font-size: 0.85em; background-color: #1e1e1e">
         <tr>
             <th> <em>ctrl</em> C </th>
-            <td> Cancels current process </td>
-        </tr>
-        <tr>
-            <th> cmd T </th>
-            <td> Opens a new tab </td>
+            <td> cancels current process </td>
         </tr>
         <tr>
             <th> cmd K / clear </th>
-            <td> Kill screen (wipe command terminal) </td>
+            <td> kill screen (wipe command terminal) </td>
         </tr>
         <tr>
             <th> cmd L </th>
             <td> clears to previous mark (not undo) </td>
         </tr>
         <tr>
+            <th> <em>ctrl</em> U </th>
+            <td> (undo) clears to the beginning of the line </td>
+        </tr>
+        <tr>
+            <th> <em>ctrl</em> A </th>
+            <td> goes back to the beginning of the line </td>
+        </tr>
+        <tr>
+            <th> <em>ctrl</em> E </th>
+            <td> goes to the end of the line </td>
+        </tr>
+        <tr>
             <th> <em>option</em> click </th>
             <td> move the cursor to a specified spot </td>
         </tr>
         <tr>
-            <th> <em>ctrl</em> A </th>
-            <td> Goes back to the beginning of the line </td>
-        </tr>
-        <tr>
-            <th> <em>ctrl</em> E </th>
-            <td> Goes to the end of the line </td>
-        </tr>
-        <tr>
-            <th> <em>ctrl</em> U </th>
-            <td>(undo) Clears to the beginning of the line </td>
-        </tr>
-        <tr>
             <th> <em>ctrl</em> W </th>
-            <td> Cut the word <em>before</em> the cursor </td>
+            <td> cut the word <em>before</em> the cursor </td>
         </tr>
         <tr>
             <th> <em>ctrl</em> K </th>
-            <td> Cut the word <em>after</em> the cursor </td>
+            <td> cut the word <em>after</em> the cursor </td>
+        </tr>
+        <tr>
+            <th> cmd T </th>
+            <td> opens a new tab </td>
+        </tr>
+        <tr>
+            <th> cmd N </th>
+            <td> opens a new terminal </td>
+        </tr>
+        <tr>
+            <th> cmd C </th>
+            <td> copies selected text </td>
+        </tr>
+        <tr>
+            <th> cmd V </th>
+            <td> pastes selected text </td>
         </tr>
     </table>
 
