@@ -50,7 +50,7 @@
             <td>
                 <strong>Change Directory</strong>: reverts back to the home directory by default
             <!-- CD Table of Functions -->
-                <div id="table-in">
+                <div class="table-in">
                         <table>
                             <tr>
                                 <th> cd </th>
@@ -108,16 +108,18 @@
             <th> mkdir </th>
             <td> creates an empty directory 
             <!-- MkDir table of Options -->
-                <table style="border-collapse: collapse;">
-                    <tr>
-                        <th> -p </th>
-                        <td> makes any necessary parent directories along a specified path 
-                            <ul>
-
-                            </ul>
-                        </td>
-                    </tr>
-                </table>
+                <div class="table-in">
+                    <table>
+                        <tr>
+                            <th> -p </th>
+                            <td> makes any necessary parent directories along a specified path 
+                                <ul>
+    
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
             <!-- Finish MkDir table of options -->
             </td>
         </tr>
@@ -164,36 +166,38 @@
             <th> <a href="https://www.geeksforgeeks.org/zip-command-in-linux-with-examples/"> zip </a> </th>
             <td> Create a .zip file from an existing file / directory using the following format <br> <strong>zip  &nbsp; &nbsp; file_name.zip &nbsp; &nbsp;  file_name</strong> 
         <!-- Zip Table of Functions [ start ] -->
-            <table style="border-collapse: collapse ;">
-                <tr>
-                    <th> -r </th>
-                    <td> recursively zips all files in a directory </td>
-                </tr>
-                <tr>
-                    <th> -u </th>
-                    <td> updates the zip archive to add new files <br> <strong> zip -u &nbsp; file.zip &nbsp; file2.txt file3.txt </strong> <br> this will add files 2 and 3 to the existing file.zip </td>
-                </tr>
-                <tr>
-                    <th> -d </th>
-                    <td> deletes specified files from .zip </td>
-                </tr>
-                <tr>
-                    <th> -x </th>
-                    <td> excludes specified files while zipping </td>
-                </tr>
-                <tr>
-                    <th> -m </th>
-                    <td> Deletes original files after zipping </td>
-                </tr>
-                <tr>
-                    <th> *.jpg </th>
-                    <td> zip all files within a directory of a specified format as a single file by using the following syntax: <br> <strong>zip &nbsp; new_zip.zip &nbsp; *.jpg</strong> <br> now all .jpg files within the directory will be saved as a single .zip file named "new_zip.zip" </td>
-                </tr>
-                <tr>
-                    <th> indiv file output </th>
-                    <td> to individually zip all specified files in a directory (as opposed to wrapping them in a single zip file) : <br> <strong>for i in &nbsp; <a href="https://unix.stackexchange.com/questions/68489/command-to-zip-multiple-directories-into-individual-zip-files">*.jpg</a>; &nbsp; do &nbsp; zip "${i%}.zip" &nbsp; "$i"; done</strong> <br> where <em>*.jpg</em> indicates the file type you want to zip individually </td>
-                </tr>
-            </table>
+                <div class="table-in">
+                    <table>
+                        <tr>
+                            <th> -r </th>
+                            <td> recursively zips all files in a directory </td>
+                        </tr>
+                        <tr>
+                            <th> -u </th>
+                            <td> updates the zip archive to add new files <br> <strong> zip -u &nbsp; file.zip &nbsp; file2.txt file3.txt </strong> <br> this will add files 2 and 3 to the existing file.zip </td>
+                        </tr>
+                        <tr>
+                            <th> -d </th>
+                            <td> deletes specified files from .zip </td>
+                        </tr>
+                        <tr>
+                            <th> -x </th>
+                            <td> excludes specified files while zipping </td>
+                        </tr>
+                        <tr>
+                            <th> -m </th>
+                            <td> Deletes original files after zipping </td>
+                        </tr>
+                        <tr>
+                            <th> *.jpg </th>
+                            <td> zip all files within a directory of a specified format as a single file by using the following syntax: <br> <strong>zip &nbsp; new_zip.zip &nbsp; *.jpg</strong> <br> now all .jpg files within the directory will be saved as a single .zip file named "new_zip.zip" </td>
+                        </tr>
+                        <tr>
+                            <th> individual file output </th>
+                            <td> to individually zip all specified files in a directory (as opposed to wrapping them in a single zip file) : <br> <strong>for i in &nbsp; <a href="https://unix.stackexchange.com/questions/68489/command-to-zip-multiple-directories-into-individual-zip-files">*.jpg</a>; &nbsp; do &nbsp; zip "${i%}.zip" &nbsp; "$i"; done</strong> <br> where <em>*.jpg</em> indicates the file type you want to zip individually </td>
+                        </tr>
+                    </table>
+                </div>
         <!-- Zip Table of Functions [ end ] -->
         </tr>
         <tr>
@@ -413,7 +417,7 @@
     <div class="nav-bar">
         <table>
             <tr>
-                <th><a href="./index.html"> Notebook </a></th>
+                <td><a href="./index.html"> Notebook </a></td>
                 <td><a href="./cl.html"> Command-Line </a></td>
                 <td><a href="./html.html"> HTML </a></td>
                 <td><a href="./css.html"> CSS </a></td>
