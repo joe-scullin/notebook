@@ -24,7 +24,7 @@
 
     <!-- Page Title -->
     <h1> Command-Line </h1>
-    <p> :: Terminal , Shell , etc. </p>
+    <p> # Shell, Terminal, Command Prompt </p>
 
 
 
@@ -35,45 +35,49 @@
     <table>
         <tr>
             <th> pwd </th>
-            <td><strong>Print Working Directory</strong>: prints the current location and pathway to your current directory</td>
+            <td><strong>Print Working Directory</strong>: prints the location and pathway to your current directory</td>
         </tr>
         <tr>
             <th> ls </th>
-            <td><strong>Lists</strong> all items in the current directory  (Alphabetically by default)</td>
+            <td><strong>Lists</strong> all items in the current directory or specified directory 
+                <ul>
+                    <strong>ls &nbsp; Downloads</strong> <br> will list the contents of your Downloads folder
+                </ul>
+            </td>
         </tr>
         <tr>
             <th> cd </th>
             <td>
                 <strong>Change Directory</strong>: reverts back to the home directory by default
             <!-- CD Table of Functions -->
-                <table style="font-size: 0.85em; background-color: #1e1e1e; line-height: 1.25em; border-collapse: collapse ;">
-                    <tr>
-                        <th> cd </th>
-                        <td> reverts back to home directory (user) </td>
-                    </tr>
-                    <tr>
-                        <th> cd .. </th>
-                        <td> goes back one directory level <br> <strong>cd .</strong> current directory <br> <strong>cd ..</strong> 1 directory back </td>
-                    </tr>
-                    <tr>
-                        <th> cd / </th>
-                        <td> reverts back to root directory (cores) </td>
-                    </tr>
-                    <tr>
-                        <th> cd / specified / path </th>
-                        <td> changes directory along specified path </td>
-                    </tr>
-                </tr>
-                <tr>
-                    <th> cd ~ </th>
-                    <td> begins pathway at user's directory <br> ex: ~/Downloads = /Users/joe/Downloads </td>
-                </tr>
-            </tr>
-            <tr>
-                <th> cd - </th>
-                <td> reverts back to previously visited directory </td>
-            </tr>
-                </table>
+                <div id="table-in">
+                        <table>
+                            <tr>
+                                <th> cd </th>
+                                <td> reverts back to home directory of the current user </td>
+                            </tr>
+                            <tr>
+                                <th> cd ~ </th>
+                                <td> reverts back to user's directory but can be used when writing absolute paths <br> % cd ~/Downloads <ul>/Users/joe/Downloads</ul>  </td>
+                            </tr>
+                            <tr>
+                                <th> cd .. </th>
+                                <td> goes back one directory level <br> <strong>cd .</strong> current directory <br> <strong>cd ..</strong> 1 directory back </td>
+                            </tr>
+                            <tr>
+                                <th> cd / </th>
+                                <td> reverts back to root directory (cores) </td>
+                            </tr>
+                            <tr>
+                                <th> cd / specified / path </th>
+                                <td> changes directory along specified path </td>
+                            </tr>
+                            <tr>
+                                <th> cd - </th>
+                                <td> reverts back to previously visited directory </td>
+                            </tr>
+                        </table>
+                </div>
             <!-- Finish CD Table -->
             </td>
         </tr>
@@ -102,7 +106,20 @@
         </tr>
         <tr>
             <th> mkdir </th>
-            <td> creates an empty directory </td>
+            <td> creates an empty directory 
+            <!-- MkDir table of Options -->
+                <table style="border-collapse: collapse;">
+                    <tr>
+                        <th> -p </th>
+                        <td> makes any necessary parent directories along a specified path 
+                            <ul>
+
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+            <!-- Finish MkDir table of options -->
+            </td>
         </tr>
         <tr>
             <th> rm </th>
@@ -145,9 +162,9 @@
     <table>
         <tr>
             <th> <a href="https://www.geeksforgeeks.org/zip-command-in-linux-with-examples/"> zip </a> </th>
-            <td> Create a .zip file from an existing file / directory using the following format <br> zip  &nbsp; &nbsp; file_name.zip &nbsp; &nbsp;  file_name 
+            <td> Create a .zip file from an existing file / directory using the following format <br> <strong>zip  &nbsp; &nbsp; file_name.zip &nbsp; &nbsp;  file_name</strong> 
         <!-- Zip Table of Functions [ start ] -->
-            <table style="font-size: 0.85em; background-color: #1e1e1e; line-height: 1.25em; border-collapse: collapse ;">
+            <table style="border-collapse: collapse ;">
                 <tr>
                     <th> -r </th>
                     <td> recursively zips all files in a directory </td>
@@ -170,7 +187,7 @@
                 </tr>
                 <tr>
                     <th> *.jpg </th>
-                    <td> zip all files within a directory of a specified format as a single file by using the following syntax: <br><strong>zip &nbsp; new_zip.zip &nbsp; *.jpg</strong><br> now all .jpg files within the directory will be saved as a single .zip file named "new_zip.zip" </td>
+                    <td> zip all files within a directory of a specified format as a single file by using the following syntax: <br> <strong>zip &nbsp; new_zip.zip &nbsp; *.jpg</strong> <br> now all .jpg files within the directory will be saved as a single .zip file named "new_zip.zip" </td>
                 </tr>
                 <tr>
                     <th> indiv file output </th>
@@ -201,11 +218,17 @@
     <table>
         <tr>
             <th> > </th>
-            <td> used to redirect the output of a command to a file. The contents of the file are <strong><em>overwritten</em></strong> each time this operator is used. <br> <strong>print "Hello" > text.txt</strong> <br> this will overwrite the contents of file: text.txt and replace it with the string - Hello </td>
+            <td> used to redirect the output of a command to a file. The contents of the file are <em>overwritten</em> each time this operator is used. 
+                <ul>
+                    <strong>print "Hello" > text.txt</strong> <br> this will overwrite the contents of file: text.txt and replace it with the string - Hello
+                </ul>
+            </td>
         </tr>
         <tr>
             <th> >> </th>
-            <td> similar to the > operator, but it <strong><em>appends</em></strong> the output of a command to an existing file, rather than overwriting its contents. <br> <strong> print "World" >> text.txt</strong> <br> this will append the string - World - to the already existing content within the file text.txt resulting in <br> Hello <br> World </td>
+            <td> similar to the > operator, but it <em>appends</em> the output of a command to an existing file, rather than overwriting its contents.  
+                <ul> <strong> print "World" >> text.txt</strong> <br> this will append the string - World - to the already existing content within the file text.txt resulting in <br> Hello <br> World </ul> 
+            </td>
         </tr>
         <tr>
             <th> < </th>
@@ -235,7 +258,23 @@
         </tr>
         <tr>
             <th> man </th>
-            <td> shows the <strong>user manual</strong> for the specified command <br> - press Q to quit - </td>
+            <td> shows the <strong>user manual</strong> for the specified command 
+                <ul>
+                    - press Q to quit - 
+                </ul> 
+            </td>
+        </tr>
+        <tr>
+            <th> help 
+                <ul>
+                    - not on Unix - 
+                </ul>
+            </th>
+            <td> displays a brief summary of a command's usage and options
+                <ul>
+                    The help command is usually built into the shell, and provides a quick reference for commonly used commands. The information displayed by help is generally less detailed than the manual pages displayed by man.
+                </ul>
+            </td>
         </tr>
         <tr>
             <th> whoami </th>
@@ -257,41 +296,43 @@
 
 <!-- Flags -->
 
-    <h2> <a href="https://www.softcover.io/read/fc6c09de/unix_commands/basics"> Flags </a> </h2>
-    <table style="font-size: 0.85em; background-color: #1e1e1e">
-        <tr>
-            <th> -a </th>
-            <td> all hidden items </td>
-        </tr>
-        <tr>
-            <th> -l </th>
-            <td> list w/ more detail </td>
-        </tr>
-        <tr>
-            <th> -h </th>
-            <td> human readable </td>
-        </tr>
-        <tr>
-            <th> -s </th>
-            <td> display the file size </td>
-        </tr>
-        <tr>
-            <th> -S </th>
-            <td> sort by size </td>
-        </tr>
-        <tr>
-            <th> -t </th>
-            <td> sort by time last modified </td>
-        </tr>
-        <tr>
-            <th> -r </th>
-            <td> reverse sort </td>
-        </tr>
-        <tr>
-            <th> -F </th>
-            <td> flag the item w/ a marker </td>
-        </tr>
-    </table>
+    <h2> <a href="https://www.softcover.io/read/fc6c09de/unix_commands/basics"> Options / Flags </a> </h2>
+    <div class="table-in">
+        <table>
+            <tr>
+                <th> -a </th>
+                <td> all hidden items </td>
+            </tr>
+            <tr>
+                <th> -l </th>
+                <td> list w/ more detail </td>
+            </tr>
+            <tr>
+                <th> -h </th>
+                <td> human readable </td>
+            </tr>
+            <tr>
+                <th> -s </th>
+                <td> display the file size </td>
+            </tr>
+            <tr>
+                <th> -S </th>
+                <td> sort by size </td>
+            </tr>
+            <tr>
+                <th> -t </th>
+                <td> sort by time last modified </td>
+            </tr>
+            <tr>
+                <th> -r </th>
+                <td> reverse sort </td>
+            </tr>
+            <tr>
+                <th> -F </th>
+                <td> flag the item w/ a marker </td>
+            </tr>
+        </table>
+    </div>
 
 
 
@@ -299,61 +340,64 @@
 
 
 <!-- Hot Keys -->
+
     <h2> <a href="https://betterprogramming.pub/boost-your-command-line-productivity-with-keyboard-shortcuts-4de2f6cbd069"> Hot Keys </a> </h2>
-    <table style="font-size: 0.85em; background-color: #1e1e1e">
-        <tr>
-            <th> <em>ctrl</em> C </th>
-            <td> cancels current process </td>
-        </tr>
-        <tr>
-            <th> cmd K / clear </th>
-            <td> kill screen (wipe command terminal) </td>
-        </tr>
-        <tr>
-            <th> cmd L </th>
-            <td> clears to previous mark (not undo) </td>
-        </tr>
-        <tr>
-            <th> <em>ctrl</em> U </th>
-            <td> (undo) clears to the beginning of the line </td>
-        </tr>
-        <tr>
-            <th> <em>ctrl</em> A </th>
-            <td> goes back to the beginning of the line </td>
-        </tr>
-        <tr>
-            <th> <em>ctrl</em> E </th>
-            <td> goes to the end of the line </td>
-        </tr>
-        <tr>
-            <th> <em>option</em> click </th>
-            <td> move the cursor to a specified spot </td>
-        </tr>
-        <tr>
-            <th> <em>ctrl</em> W </th>
-            <td> cut the word <em>before</em> the cursor </td>
-        </tr>
-        <tr>
-            <th> <em>ctrl</em> K </th>
-            <td> cut the word <em>after</em> the cursor </td>
-        </tr>
-        <tr>
-            <th> cmd T </th>
-            <td> opens a new tab </td>
-        </tr>
-        <tr>
-            <th> cmd N </th>
-            <td> opens a new terminal </td>
-        </tr>
-        <tr>
-            <th> cmd C </th>
-            <td> copies selected text </td>
-        </tr>
-        <tr>
-            <th> cmd V </th>
-            <td> pastes selected text </td>
-        </tr>
-    </table>
+    <div class="table-in">
+        <table>
+            <tr>
+                <th> <em>ctrl</em> C </th>
+                <td> cancels current process </td>
+            </tr>
+            <tr>
+                <th> cmd K / clear </th>
+                <td> kill screen (wipe command terminal) </td>
+            </tr>
+            <tr>
+                <th> cmd L </th>
+                <td> clears to previous mark (not undo) </td>
+            </tr>
+            <tr>
+                <th> <em>ctrl</em> U </th>
+                <td> (undo) clears to the beginning of the line </td>
+            </tr>
+            <tr>
+                <th> <em>ctrl</em> A </th>
+                <td> goes back to the beginning of the line </td>
+            </tr>
+            <tr>
+                <th> <em>ctrl</em> E </th>
+                <td> goes to the end of the line </td>
+            </tr>
+            <tr>
+                <th> <em>option</em> click </th>
+                <td> move the cursor to a specified spot </td>
+            </tr>
+            <tr>
+                <th> <em>ctrl</em> W </th>
+                <td> cut the word <em>before</em> the cursor </td>
+            </tr>
+            <tr>
+                <th> <em>ctrl</em> K </th>
+                <td> cut the word <em>after</em> the cursor </td>
+            </tr>
+            <tr>
+                <th> cmd T </th>
+                <td> opens a new tab </td>
+            </tr>
+            <tr>
+                <th> cmd N </th>
+                <td> opens a new terminal </td>
+            </tr>
+            <tr>
+                <th> cmd C </th>
+                <td> copies selected text </td>
+            </tr>
+            <tr>
+                <th> cmd V </th>
+                <td> pastes selected text </td>
+            </tr>
+        </table>
+    </div>
 
 
 
@@ -366,16 +410,17 @@
 
     
 <!-- Navigation Bar -->
-    <table style="background-color: #1E1E1E; font-size: 0.8em; padding-top: 3em; text-align: left;">
-        <tr>
-            <th><a href="./index.html"> Notebook </a></th>
-            <td><a href="./cl.html"> Command-Line </a></td>
-            <td><a href="./html.html"> HTML </a></td>
-            <td><a href="./css.html"> CSS </a></td>
-            <td><a href="./js.html"> JavaScript </a></td>
-        </tr>
-    </table>
-
+    <div class="nav-bar">
+        <table>
+            <tr>
+                <th><a href="./index.html"> Notebook </a></th>
+                <td><a href="./cl.html"> Command-Line </a></td>
+                <td><a href="./html.html"> HTML </a></td>
+                <td><a href="./css.html"> CSS </a></td>
+                <td><a href="./js.html"> JavaScript </a></td>
+            </tr>
+        </table>
+    </div>
 
 </body>
   
