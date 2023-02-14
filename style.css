@@ -94,12 +94,14 @@ table{
 
 /*== indented table style ==*/
 .table-in table{
+    background: #1E1E1E;
     border-collapse: collapse;
     font-size: 0.9em;
 }
 
 /*== navigation bar at the bottom of each page ==*/
 .nav-bar table{
+    background: #1E1E1E;
     border-collapse: collapse;
     font-size: 0.8em;
     padding-top: 3em;
